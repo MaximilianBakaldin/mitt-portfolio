@@ -1,12 +1,13 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
-import Layout from "../components/layout"
+import "bootstrap/dist/css/bootstrap.min.css"
 import { Helmet } from "react-helmet"
 
 import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
+import Layout from "../components/layout"
 
 const options = {
   renderNode: {
@@ -15,41 +16,43 @@ const options = {
   },
 }
 
-const IndexPage = () => {
+const About = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulIndex {
+      allContentfulAboutPage {
         nodes {
           title
           description {
             raw
           }
           image {
-            gatsbyImage(width: 500)
+            gatsbyImage(width: 200)
           }
         }
       }
     }
   `)
 
-  const indexPage = data.allContentfulIndex.nodes[0]
-  const image = getImage(indexPage.image)
+  const aboutPage = data.allContentfulAboutPage.nodes[0]
+  const image = getImage(aboutPage.image)
 
   return (
     <Layout>
       <Helmet>
-        <title>Hemsida Maximilian Bakaldin</title>
-        <meta name="description" content="" />
+        <title>Maximilian Bakaldin</title>
+        <meta
+          name="description"
+          content="Din beskrivande meta-beskrivning här"
+        />
       </Helmet>
-      <h1>{indexPage.title}</h1>
-      {image && <GatsbyImage image={image} alt={indexPage.title} />}
+      <h1>{aboutPage.title}</h1>
+      {image && <GatsbyImage image={image} alt={aboutPage.title} />}
       {documentToReactComponents(
-        JSON.parse(indexPage.description.raw),
+        JSON.parse(aboutPage.description.raw),
         options
       )}
-      <Link to="/portfolio">Se min portfolio</Link>
     </Layout>
   )
 }
 
-export default IndexPage
+export default About

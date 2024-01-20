@@ -1,14 +1,32 @@
 import * as React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 import Layout from "../components/layout"
 
-//i dev mode overridas denna sida av en inbyggd 404-sida
-const NotFoundPage = () => (
-  <Layout>
-    <h1>404: Not Found</h1>
-  </Layout>
-)
+const Page404 = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulPage404 {
+        nodes {
+          errorMessage
+          homePageLink
+        }
+      }
+    }
+  `)
 
-export const Head = () => <title>Portfolio Page</title>
+  const page404 = data.allContentfulPage404.nodes[0]
 
-export default NotFoundPage
+  return (
+    <Layout>
+      <h1>{page404.errorMessage}</h1>
+      <Link to="/">
+        <button>{page404.homePageLink}</button>
+      </Link>
+    </Layout>
+  )
+}
+
+export default Page404

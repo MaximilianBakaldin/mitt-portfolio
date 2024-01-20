@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #6acfc7;
+}
+
+.bg-body-tertiary {
+  background-color: rgb(83, 140, 140) !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.card {
+  border-radius: 0;
+  margin-top: auto;
+  background-color: beige;
+}
+
+.title {
+  list-style: none !important;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.main-content a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-content li {
+  padding: 3rem;
+}
+
+footer {
+  background-color: #333;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+footer .nav-link {
+  color: black !important;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 7rem;
+  margin-top: 7rem;
+}
+
+.contact-text {
+  text-align: center !important;
+  margin-top: 2rem;
+}
