@@ -113,7 +113,8 @@ exports.createPages = async ({ graphql, actions }) => {
       allContentfulPage404 {
         edges {
           node {
-            slug
+            errorMessage
+            homePageLink
           }
         }
       }
