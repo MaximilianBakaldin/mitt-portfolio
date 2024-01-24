@@ -26,7 +26,7 @@ const Contact = () => {
     <Layout>
       <Helmet>
         <title>Kontakta Maximilian</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Kontakta Maximilian" />
       </Helmet>
       <h1 className="contact-text">{contactPage.title}</h1>
       <div className="contact-icons">

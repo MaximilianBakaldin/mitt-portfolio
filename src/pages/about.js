@@ -42,7 +42,7 @@ const About = () => {
         <title>Maximilian Bakaldin</title>
         <meta
           name="description"
-          content="Din beskrivande meta-beskrivning här"
+          content="Kort om Maximilian Bakaldin"
         />
       </Helmet>
       <h1>{aboutPage.title}</h1>

@@ -40,7 +40,7 @@ const SecondPage = () => {
         <title>Maximilian Bakaldin</title>
         <meta
           name="description"
-          content="Din beskrivande meta-beskrivning här"
+          content="Maximilians portfolio"
         />
       </Helmet>
       <h1>Portfolio</h1>

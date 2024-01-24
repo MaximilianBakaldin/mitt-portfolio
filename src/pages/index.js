@@ -39,7 +39,7 @@ const IndexPage = () => {
     <Layout>
       <Helmet>
         <title>Hemsida Maximilian Bakaldin</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Hemsida" />
       </Helmet>
       <h1>{indexPage.title}</h1>
       {image && <GatsbyImage image={image} alt={indexPage.title} />}

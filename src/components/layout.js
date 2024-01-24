@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/style.css"
 import { Link } from "gatsby"
 
-// Define your links in an array
+// my navbar in an array
 const links = [
   { name: "Home", path: "/" },
   { name: "Portfolio", path: "/portfolio" },
@@ -17,9 +17,6 @@ const Layout = ({ children }) => (
       {/* Bootstrap Navbar */}
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          {/*           <Link to="/" className="nav-link">
-            Maximilian
-          </Link> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -33,7 +30,7 @@ const Layout = ({ children }) => (
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              {/* Map over the links and generate a Link component for each one */}
+              {/* map over the links and generate a Link component for each one */}
               {links.map((link, index) => (
                 <Link key={index} to={link.path} className="nav-link">
                   {link.name}

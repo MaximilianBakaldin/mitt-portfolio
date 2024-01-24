@@ -21,8 +21,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const indexNode = indexResponse.data.allContentfulIndex.nodes[0]
   createPage({
-    path: `/`, // Use any path here
-    component: path.resolve("./src/pages/index.js"), // Create a suitable component for the "About Me" page
+    path: `/`,
+    component: path.resolve("./src/pages/index.js"),
     context: {
       title: indexNode.title,
       description: indexNode.description,
@@ -77,8 +77,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const aboutPageEdge = aboutPageResponse.data.allContentfulAboutPage.edges[0]
   createPage({
-    path: `/about`, // Use any path here
-    component: path.resolve("./src/pages/about.js"), // Create a suitable component for the "About Me" page
+    path: `/about`,
+    component: path.resolve("./src/pages/about.js"),
     context: {
       slug: aboutPageEdge.node.slug,
     },
@@ -100,8 +100,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const contactPageEdge =
     contactPageResponse.data.allContentfulContactPage.edges[0]
   createPage({
-    path: `/contact`, // Use any path here
-    component: path.resolve("./src/pages/contact.js"), // Create a suitable component for the "About Me" page
+    path: `/contact`,
+    component: path.resolve("./src/pages/contact.js"),
     context: {
       slug: contactPageEdge.node.slug,
     },
@@ -123,8 +123,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const page404Edge = page404Response.data.allContentfulPage404.edges[0]
   createPage({
-    path: `/404`, // Use any path here
-    component: path.resolve("./src/pages/404.js"), // Create a suitable component for the "About Me" page
+    path: `/404`,
+    component: path.resolve("./src/pages/404.js"),
     context: {
       slug: page404Edge.node.slug,
     },
